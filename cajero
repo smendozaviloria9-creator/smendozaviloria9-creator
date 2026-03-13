@@ -1,0 +1,75 @@
+# Simulador de Cajero Automático en Python
+# Credenciales: Usuario "admin", PIN "1234"
+
+# Datos iniciales
+usuario_valido = "sebastian"
+pin_valido = "1234"
+saldo = 1000
+
+
+def iniciar_sesion():
+    intentos = 3
+    while intentos > 0:
+        usuario = input("Ingrese su usuario: ")
+        pin = input("Ingrese su PIN: ")
+
+        if usuario == usuario_valido and pin == pin_valido:
+            print("\n¡Inicio de sesión exitoso!\n")
+            return True
+        else:
+            intentos -= 1
+            print(
+                f"Credenciales incorrectas. Intentos restantes: {intentos}\n")
+
+    print("Cuenta bloqueada por seguridad.")
+    return False
+
+
+def mostrar_menu():
+    print("--- MENU CAJERO ---")
+    print("1. Consultar Saldo")
+    print("2. Depositar Dinero")
+    print("3. Retirar Dinero")
+    print("4. Salir")
+
+
+def cajero():
+    global saldo
+    if not iniciar_sesion():
+        return
+
+    while True:
+        mostrar_menu()
+        opcion = input("Seleccione una opción: ")
+
+        if opcion == "1":
+            print(f"\nSu saldo actual es: ${saldo:,.2f}\n")
+
+        elif opcion == "2":
+            deposito = float(input("Ingrese monto a depositar: "))
+            if deposito > 0:
+                saldo += deposito
+                print(f"\nDepósito exitoso. Nuevo saldo: ${saldo:,.2f}\n")
+            else:
+                print("\nMonto inválido.\n")
+
+        elif opcion == "3":
+            retiro = float(input("Ingrese monto a retirar: "))
+            if 0 < retiro <= saldo:
+                saldo -= retiro
+                print(f"\nRetiro exitoso. Nuevo saldo: ${saldo:,.2f}\n")
+            elif retiro > saldo:
+                print("\nSaldo insuficiente.\n")
+            else:
+                print("\nMonto inválido.\n")
+
+        elif opcion == "4":
+            print("Gracias por usar nuestros servicios. ¡Adiós!")
+            break
+
+        else:
+            print("\nOpción no válida, intente nuevamente.\n")
+
+
+# Ejecutar el cajero
+cajero()
