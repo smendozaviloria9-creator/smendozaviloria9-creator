@@ -1,4 +1,4 @@
-## Hi there 👋
+## Hi my Name is sebastian mendoza 👋
 Backend & Frameworks: C#, .NET (ASP.NET Core, Entity Framework Core, Razor Pages, Blazor), Python.
 
 Frontend: JavaScript, HTML, CSS.
