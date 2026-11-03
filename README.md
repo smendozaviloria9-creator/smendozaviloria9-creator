@@ -1,4 +1,11 @@
 ## Hi there 👋
+Backend & Frameworks: C#, .NET (ASP.NET Core, Entity Framework Core, Razor Pages, Blazor), Python.
+
+Frontend: JavaScript, HTML, CSS.
+
+Bases de Datos & Contenedores: PostgreSQL, Docker, Docker Compose.
+
+Entornos de Desarrollo: JetBrains Rider y VS Code (desplegados sobre Windows y Linux).
 
 <!--
 **smendozaviloria9-creator/smendozaviloria9-creator** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
